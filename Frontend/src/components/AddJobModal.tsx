@@ -7,7 +7,7 @@ interface AddJobModalProps {
 }
 
 const AddJobModal: React.FC<AddJobModalProps> = ({ onClose }) => {
-  const { addJob } = useJobContext();
+  const { addJob } = useJobContext(); // Get addJob function from context
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');
   const [status, setStatus] = useState<JobApplication['status']>('Applied');
@@ -28,7 +28,7 @@ const AddJobModal: React.FC<AddJobModalProps> = ({ onClose }) => {
         timestamp: new Date().toISOString(),
       };
 
-      // Create the job object
+      // Create the job object without userId
       const newJob = {
         company,
         role,

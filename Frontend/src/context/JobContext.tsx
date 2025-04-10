@@ -7,11 +7,12 @@ interface JobContextProps {
   loading: boolean;
   error: string | null;
   fetchJobs: () => Promise<void>;
-  addJob: (job: Omit<JobApplication, 'id' | '_id'>) => Promise<void>;
+  addJob: (job: Omit<JobApplication, 'id' | '_id' | 'userId'>) => Promise<void>;
   updateJob: (job: JobApplication) => Promise<void>;
   deleteJob: (id: string) => Promise<void>;
   updateJobStatus: (id: string, status: JobApplication['status']) => Promise<void>;
   clearJobs: () => void;
+  userId: string | null;
 }
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -47,7 +48,7 @@ export const JobProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   };
 
-  const addJob = async (job: Omit<JobApplication, 'id'>): Promise<void> => {
+  const addJob = async (job: Omit<JobApplication, 'id' | '_id' | 'userId'>): Promise<void> => {
     if (!userId) return;
     
     setLoading(true);
@@ -232,6 +233,7 @@ export const JobProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   return (
     <JobContext.Provider value={{
+      userId,
       jobs,
       loading,
       error,
