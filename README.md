@@ -51,6 +51,7 @@ student-job-tracker/
 3. Create a `.env` file with your Clerk publishable key:
    ```
    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   VITE_API_URL=http://localhost:3000
    ```
 
 4. Start the development server:
