@@ -163,13 +163,9 @@ The Express API can be deployed to services like Heroku, Railway, or any Node.js
 - Resume and cover letter management
 - Company research notes and contacts tracking
 
-## License
-
-[MIT](LICENSE)
-
 ## Contributors
 
-- [Your Name](https://github.com/yourusername)
+- [Milan Dey](https://github.com/mian312)
 
 ---
 
